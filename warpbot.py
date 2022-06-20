@@ -28,6 +28,9 @@ def send_key(message):
         a += 1
     
         try:
+			keyboard = types.InlineKeyboardMarkup()
+			donate = types.InlineKeyboardButton(text = "Поддержать автора 💸", callback_data = 'donate')
+			keyboard.row(donate)
 
             headers = {
                 "CF-Client-Version": "a-6.11-2223",
@@ -84,9 +87,15 @@ def send_key(message):
             bot.send_message(message.from_user.id, "Создание ключей временно недоступно, попробуйте через `3 минуты`\nЕсли ошибка повторяется, напишите @whomet", parse_mode = 'Markdown')
 
     for x in gkeys:
-        bot.send_message(message.from_user.id, f"*Ваш ключ:* `{x}`\n*Данных выделено:* `{referral_count} GB`, \n*Тип аккаунта:* `{account_type}`", parse_mode = 'Markdown')
+        bot.send_message(message.from_user.id, f"*Ваш ключ:* `{x}`\n*Данных выделено:* `{referral_count} GB`, \n*Тип аккаунта:* `{account_type}`", parse_mode = 'Markdown', reply_markup = keyboard)
     
     gkeys.clear()
+	
+@bot.callback_query_handler(func = lambda call: True)
+def callback_inline(call):
+    if call.message:
+        if call.data == 'donate':
+	    	bot.send_message(call.message.chat.id, 'Поддержать автора можно, *отправив любой донат* на QIWI/ЮMoney-кошелёк ❤️\nРеквизиты:\nQIWI: `qiwi.com/n/TILYI849`\nЮMoney: `4100117470392066`', parse_mode = 'Markdown')
         
     
 bot.polling(none_stop = True)

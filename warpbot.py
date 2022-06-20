@@ -19,7 +19,6 @@ print('Бот работает!')
 
 @bot.message_handler(commands = ['start'])
 def send_welcome(message):
-	bot.reply_to(message, "Привет! Я бот, способный создавать ключи WARP+ для VPN 1.1.1.1, приятного использования!\nДля того, чтобы это сделать, введи команду /generate \n\n• `by` @whomet, \n• `github:` https://github.com/GRTUBORG", parse_mode = 'Markdown')
 
 @bot.message_handler(commands = ['generate'])
 def send_key(message):

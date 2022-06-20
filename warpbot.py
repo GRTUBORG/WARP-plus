@@ -28,6 +28,9 @@ def send_key(message):
         a += 1
 
         try:
+			keyboard = types.InlineKeyboardMarkup()
+			donate = types.InlineKeyboardButton(text = "Поддержать автора 💸", callback_data = 'donate')
+			keyboard.row(donate)
             headers = {
                 "CF-Client-Version": "a-6.11-2223",
                 "Host": "api.cloudflareclient.com",

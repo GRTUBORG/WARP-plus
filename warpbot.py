@@ -28,9 +28,9 @@ def send_key(message):
         a += 1
 
         try:
-	keyboard = types.InlineKeyboardMarkup()
-	donate = types.InlineKeyboardButton(text = "Поддержать автора 💸", callback_data = 'donate')
-	keyboard.row(donate)
+			keyboard = types.InlineKeyboardMarkup()
+			donate = types.InlineKeyboardButton(text = "Поддержать автора 💸", callback_data = 'donate')
+			keyboard.row(donate)
 
             headers = {
                 "CF-Client-Version": "a-6.11-2223",
@@ -41,7 +41,7 @@ def send_key(message):
             }
             
             with httpx.Client(
-		base_url="https://api.cloudflareclient.com/v0a2223", headers=headers, timeout=30.0
+				base_url="https://api.cloudflareclient.com/v0a2223", headers=headers, timeout=30.0
             ) as client:
                 
                 r = client.post("/reg")

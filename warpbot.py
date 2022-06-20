@@ -89,6 +89,10 @@ def send_key(message):
         bot.send_message(message.from_user.id, f"*Ваш ключ:* `{x}`\n*Данных выделено:* `{referral_count} GB`, \n*Тип аккаунта:* `{account_type}`", parse_mode = 'Markdown', reply_markup = keyboard)
     
     gkeys.clear()
+
+@bot.message_handler(commands = ['donate'])
+def send_key(message):
+    bot.send_message(message.from_user.id, 'Поддержать автора можно, *отправив любой донат* на QIWI/ЮMoney-кошелёк ❤️\nРеквизиты:\n• QIWI: `qiwi.com/n/TILYI849`\n• ЮMoney: `4100117470392066`', parse_mode = 'Markdown')
 	
 @bot.callback_query_handler(func = lambda call: True)
 def callback_inline(call):

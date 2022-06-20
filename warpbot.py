@@ -29,8 +29,8 @@ def send_key(message):
 
         try:
             keyboard = types.InlineKeyboardMarkup()
-	        donate = types.InlineKeyboardButton(text = "Поддержать автора 💸", callback_data = 'donate')
-	        keyboard.row(donate)
+	    donate = types.InlineKeyboardButton(text = "Поддержать автора 💸", callback_data = 'donate')
+	    keyboard.row(donate)
 
             headers = {
                 "CF-Client-Version": "a-6.11-2223",

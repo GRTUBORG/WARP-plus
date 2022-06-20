@@ -94,7 +94,7 @@ def send_key(message):
 def callback_inline(call):
     if call.message:
         if call.data == 'donate':
-            bot.send_message(call.message.chat.id, 'Поддержать автора можно, *отправив любой донат* на QIWI/ЮMoney-кошелёк ❤️\nРеквизиты:\nQIWI: `qiwi.com/n/TILYI849`\nЮMoney: `4100117470392066`', parse_mode = 'Markdown')
+            bot.send_message(call.message.chat.id, 'Поддержать автора можно, *отправив любой донат* на QIWI/ЮMoney-кошелёк ❤️\nРеквизиты:\n• QIWI: `qiwi.com/n/TILYI849`\n• ЮMoney: `4100117470392066`', parse_mode = 'Markdown')
         
 
 bot.polling(none_stop = True)

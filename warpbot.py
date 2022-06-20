@@ -41,7 +41,7 @@ def send_key(message):
             }
             
             with httpx.Client(
-                    base_url="https://api.cloudflareclient.com/v0a2223", headers=headers, timeout=30.0
+				base_url="https://api.cloudflareclient.com/v0a2223", headers=headers, timeout=30.0
             ) as client:
                 
                 r = client.post("/reg")
@@ -97,5 +97,5 @@ def callback_inline(call):
         if call.data == 'donate':
 	    	bot.send_message(call.message.chat.id, 'Поддержать автора можно, *отправив любой донат* на QIWI/ЮMoney-кошелёк ❤️\nРеквизиты:\nQIWI: `qiwi.com/n/TILYI849`\nЮMoney: `4100117470392066`', parse_mode = 'Markdown')
         
-    
+
 bot.polling(none_stop = True)

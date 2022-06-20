@@ -26,7 +26,6 @@ def send_key(message):
     a = 0
     while a < value_int:
         a += 1
-    
         try:
 			keyboard = types.InlineKeyboardMarkup()
 			donate = types.InlineKeyboardButton(text = "Поддержать автора 💸", callback_data = 'donate')
